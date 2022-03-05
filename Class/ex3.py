@@ -1,16 +1,8 @@
 my_list = []
 
-print(id(my_list))
-print(type(my_list))
-print(len(my_list))
-
-for element in my_list:
-    print (element)
-
-my_list.append(10)
-print(id(my_list))
-print(type(my_list))
-print(len(my_list))
+my_list.extend(["Jhon","Carlos","Manuel","Juan","Fer"])
+ 
+my_list.sort()
 
 for element in my_list:
     print (element)
