@@ -1,0 +1,3 @@
+valor=hola
+valor=hi
+valor=mande
