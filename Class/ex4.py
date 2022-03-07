@@ -1,8 +1,12 @@
 def es_par(arg1):
     if arg1 % 2 == 0:
-        print('El número', arg1, 'es par.')
+        return True 
     else:
-        print('El número', arg1, 'es impar.')
+        return False
 
 
-r = es_par(9)
+r = es_par(8)
+if r == True:
+    print('El número es par.')
+else:
+    print('El número es impar.')
