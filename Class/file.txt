@@ -1,3 +1,5 @@
-valor=hola
-valor=hi
-valor=mande
+ip=192.168.0.1
+nombre=Juan
+estado=ON
+color=#555555
+log=3M
