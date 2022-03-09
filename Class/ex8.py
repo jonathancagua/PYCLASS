@@ -1,12 +1,10 @@
 
 def leer(arg):
     out = open('file.txt', 'w')
-    for element in arg:
-        out.writelines("valor="+element+"\n")
+    for k, v in arg.items():
+        out.writelines(k +"="+v+"\n")
     out.close()
 
-
-lista  = ['uno', 'dos','tres' ]
-
-ret = leer(lista)
+dic = {'ip': '192.168.0.1', 'nombre': 'Juan', 'estado': 'ON', 'color': '#555555', 'log': '3M'}
+ret = leer(dic)
 
