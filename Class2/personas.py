@@ -28,4 +28,9 @@ class Persona:
             return True
         else:
             return False
-        
+
+    def es_mayor_que(self , otra_persona):
+        if(self.get_edad() > otra_persona.get_edad()):
+            return True
+        else:
+            return False
