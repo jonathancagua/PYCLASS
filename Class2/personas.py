@@ -34,3 +34,10 @@ class Persona:
             return True
         else:
             return False
+    @staticmethod 
+    def get_mayor(persona_1 , persona_2):
+        if(persona_1.get_edad() > persona_2.get_edad()):
+            return persona_1
+        else:
+            return persona_2
+            
