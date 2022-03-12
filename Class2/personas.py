@@ -40,4 +40,24 @@ class Persona:
             return persona_1
         else:
             return persona_2
-            
+    @staticmethod        
+    def dump_csv(file_name,lista):
+        with open(file_name,"w",encoding="utf-8") as f:
+            f.write("Nombre,edad\n")
+            for per in lista:
+                linea = f"{per.get_nombre()},{per.get_edad()}\n"
+                #linea = "{},{}".format(per.get_nombre(),per.get_edad())
+                #linea = per.get_nombre()+","+str(per.get_edad())
+                f.write(linea)
+    @staticmethod        
+    def load_csv(file_name):
+        my_list = []
+        with open(file_name,"r",encoding="utf-8") as archivo:
+            basura = archivo.readline()
+            while(True):
+                linea = archivo.readline()
+                if not linea:
+                    break
+                elemento=linea.split(",")
+                my_list.append(Persona(elemento[0],int(elemento[1])))
+            return my_list
