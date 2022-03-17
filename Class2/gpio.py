@@ -1,11 +1,11 @@
 from operator import truediv
-GPIO_BASE_PATH 					= 'tmp'
-GPIO_PATH 						= GPIO_BASE_PATH + '/gpio_%d.data'
 
 class Gpio:
     def __init__(self,gpio):
+        self.__BASE_PATH = 'tmp'
+        self.__PATH = self.__BASE_PATH + '/gpio_%d.data'
         self.gpio 		= gpio
-        self.path 		= GPIO_PATH%(self.gpio)
+        self.path 		= self.__PATH%(self.gpio)
 
     def get_state(self):
         with open(self.path, 'r') as fd:
