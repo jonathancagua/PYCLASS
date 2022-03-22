@@ -4,7 +4,6 @@ from inventario import Inventario
 import json
 import signal  
 import time
-import traceback
 
 class ServiceExit(Exception):
     """
