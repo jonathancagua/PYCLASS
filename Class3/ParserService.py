@@ -1,6 +1,6 @@
 import socket
 import sys
-from inventario import inventario
+from inventario import Inventario
 import json
 import threading
 import signal  
@@ -17,7 +17,7 @@ def handler(sig, frame):  # define the handler
         cerrado = True
         #sys.exit(0)
         
-def func():
+def main():
     try:
         global cerrado
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -42,9 +42,9 @@ def func():
 
 #carga el directorio donde se va leer
 cerrado = False
-p1= inventario()
+p1= Inventario()
 # Create a UDP socket
 signal.signal(signal.SIGINT, handler)
-func()
+main()
 
 
