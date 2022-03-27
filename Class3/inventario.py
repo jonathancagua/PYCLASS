@@ -1,6 +1,6 @@
 from operator import truediv
 
-class inventario:
+class Inventario:
 
     def __init__(self):
         with open('config.txt', 'r') as fd:
