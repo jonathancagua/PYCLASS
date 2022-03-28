@@ -21,23 +21,26 @@ class Main:
 
     def main(self):
         signal.signal(signal.SIGINT, self.handler)
-        while True:
+        if [] == p1.load_csv():
+            print("Revisar archivos de configuracion")
+        else:
             try: 
                 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                 server_address = ('localhost', 4000)
-                lista = p1.load_csv()
-                dataAtx = json.dumps(lista)
-                sent = sock.sendto(dataAtx.encode(encoding="utf-8"), server_address)
-                print('waiting to receive')
-                data, server = sock.recvfrom(4096)
-                print('received {!r}'.format(data))
-                print('closing socket')
-                sock.close()
-                time.sleep(3)
+                while True:
+                    lista = p1.load_csv()
+                    dataAtx = json.dumps(lista)
+                    sent = sock.sendto(dataAtx.encode(encoding="utf-8"), server_address)
+                    print('waiting to receive')
+                    data, server = sock.recvfrom(4096)
+                    print('received {!r}'.format(data))
+                    time.sleep(3)
             except ServiceExit:
+                sock.close()
+                print('closing socket')
                 print("ServiceExit")
                 exit() 
-	            
+            
             
 
 
